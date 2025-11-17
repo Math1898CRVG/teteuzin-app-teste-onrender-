@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         tbody.innerHTML = "";
         try {
             // Faz uma requisiçao GET para o backend local
-            const res = await fetch("http://localhost:3000/agendamentos");
+            const res = await fetch("https://teteuzin-app-teste-onrender.onrender.com/agendamentos");
             const agendamentos = await res.json();
 
             // Percorre cada agendamento retornado e cria uma linha na tabela
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 // Confirma antes de deletar
                 if (confirm("Deseja realmente deletar este agendamento?")) {
                     try {
-                        const res = await fetch(`http://localhost:3000/agendamentos/${id}`, {
+                        const res = await fetch(`https://teteuzin-app-teste-onrender.onrender.com/agendamentos/${id}`, {
                             method: "DELETE"
                         });
                         const texto = await res.text();
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 if (novoHorario) {
                     try {
-                        const res = await fetch(`http://localhost:3000/agendamentos/${id}`, {
+                        const res = await fetch(`https://teteuzin-app-teste-onrender.onrender.com/agendamentos/${id}`, {
                             method: "PATCH",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({ horario: novoHorario })

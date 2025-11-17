@@ -10,7 +10,7 @@ form.addEventListener("submit", async (e) => {
     const horario = document.querySelector("#time").value;
 
     try {
-        const resposta = await fetch("http://localhost:3000/agendamentos", {
+        const resposta = await fetch("https://teteuzin-app-teste-onrender.onrender.com/agendamentos", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(
